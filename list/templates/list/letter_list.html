@@ -9,8 +9,8 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>title</th>
         <th>image</th>
+        <th>title</th>
         <th>Modify</th>
         <th>Delete</th>
     </tr>
@@ -19,12 +19,11 @@
     {% for letter in letter_list %}
     <tr>
         <td>{{ forloop.counter }}</td>
-        <td>{{ letter }}</td>
-        {% if letter.image != '' %}
-        <td><img src = "{{ letter.image.url }}" alt = ""></td>
-            {% else %}
-            <td>----</td>
+           {% if letter.image != '' %}
+        <td><img src = "{{ letter.image.url }}" alt = "" style = "height:88px"></td>
+            {% else %}<td>----</td>
         {% endif %}
+        <td>{{ letter }}</td>
         <td><a href = "{% url 'list:update' pk=letter.id %}">Modify</a></td>
         <td><a href = "{% url 'list:delete' pk=letter.id %}">Delete</a></td>
     </tr>
