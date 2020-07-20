@@ -20,7 +20,11 @@
     <tr>
         <td>{{ forloop.counter }}</td>
         <td>{{ letter }}</td>
+        {% if letter.image != '' %}
         <td><img src = "{{ letter.image.url }}" alt = ""></td>
+            {% else %}
+            <td>----</td>
+        {% endif %}
         <td><a href = "">Modify</a></td>
         <td><a href = "">Delete</a></td>
     </tr>
