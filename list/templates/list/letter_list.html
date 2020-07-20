@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Letter List</title>
 </head>
-<body>
+<a>
 <table>
     <thead>
     <tr>
@@ -25,11 +25,12 @@
             {% else %}
             <td>----</td>
         {% endif %}
-        <td><a href = "">Modify</a></td>
-        <td><a href = "">Delete</a></td>
+        <td><a href = "{% url 'list:update' pk=letter.id %}">Modify</a></td>
+        <td><a href = "{% url 'list:delete' pk=letter.id %}">Delete</a></td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
+<a href = "{% url 'list:add_letter' %}">Add Letter</a>
 </body>
 </html>
